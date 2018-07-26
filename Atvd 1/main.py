@@ -51,12 +51,12 @@ def selection_sort(lista):
             
 def benchmark(func, lista):
     print("\n\n" + func.__name__)
-    print(lista)
-    start = time.time()
+    print("Original:", lista)
+    start = time.time() # Retorna em segundos
     func(lista)
-    end = time.time()
-    print(end-start)
-    print(lista)
+    end = time.time()   # Retorna em segundos
+    print("\nTempo gasto:", end-start, "segundos")
+    print("Final:", lista)
     print(func.__name__ + "\n\n")
 
 a = list(b) # Obriga a criar instancias diferentes da classe list
