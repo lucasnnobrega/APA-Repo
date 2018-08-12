@@ -72,7 +72,8 @@ def merge(esquerda, direita):
 
     merged = []
 
-    # while at least one list has elements
+    # while ao menos uma das listas contém elementos
+    # percorre as duas listas ordenando no retorno da função
     while esquerda or direita:
 
         if esquerda and direita:
@@ -106,10 +107,6 @@ def quick_sort(m):
     --------
         quick_sort([4,7,8,3,2,9,1])
         # => [1,2,3,4,7,8,9]
-
-    
-
-    Returns the sorted list.
     """
 
     if len(m) <= 1:
