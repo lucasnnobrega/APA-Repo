@@ -72,11 +72,12 @@ def Counting_Sort_For_Radix(arr, ordem_numerica):
     n = len(arr)
  
     # O array de saída que deve estar ordenado com os valores do array inicial
-    saida = [0] * (n)
+    saida = [0 for i in range(n)]
+    
  
     # Cria um array que armazena a quantidade_de_vezesidade de vezes que um 
     # numero aparece
-    quantidade_de_vezes = [0] * (10)
+    quantidade_de_vezes = [0 for i in range(10)]
  
     # Armazena a quantidade_de_vezesidade de cada valor que aparece no 
     # intervalo de 0 a n ou k
