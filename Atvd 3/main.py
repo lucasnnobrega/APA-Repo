@@ -31,11 +31,11 @@ def Counting_Sort(array, lenght_or_k):
     # O array de saída que deve estar ordenado com os valores do array inicial
     saida = [0 for i in range(lenght_or_k)]
 
-    # Cria um array que armazena a quantidade_de_vezesidade de vezes que um 
+    # Cria um array que armazena a quantidade_de_vezes de vezes que um 
     # numero aparece
     quantidade_de_vezes = [0 for i in range(lenght_or_k)]
 
-    # Armazena a quantidade_de_vezesidade de cada valor que aparece no 
+    # Armazena a quantidade_de_vezes de cada valor que aparece no 
     # intervalo de 0 a n ou k, perceba que esta soma é "aleatória" pois depende 
     # do valor que está dentro da célula(i).
     for i in array:
@@ -117,7 +117,6 @@ def radixSort(arr):
     # Procura o numero máximo para que seja dimensionado as ordens numericas
     max1 = max(arr)
  
-    # Do counting sort for every digit. Note that instead
     # Fazer o Counting_Sort para cada ordem dos numeros
     # em vez de passar os numeros dos digitos, a ordem numerica é passada
     ordem_numerica = 1
