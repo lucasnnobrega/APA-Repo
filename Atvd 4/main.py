@@ -1,16 +1,26 @@
 # Python program for implementation of heap Sort
 # Um programa em Python para a implementação do heap sort 
 
+import time
+import math
+
+with open("couting.txt","r") as f:
+    """
+    Com o arquivo aberto, todas as linhas estarão em f.read() como string
+    depois de um separar pela quebra de linha e remover o primeiro elemento
+    que indica o nº de elementos, aplicamos uma função lambda para tornar o 
+    array de string em array de inteiros
+    """
+    # Outra implementação
+    #a = [int(i) for i in f.read().split('\n')[1:]]
+    b = list(map(lambda x: int(x), f.read().split('\n')[1:]))
+
 def heapify(arr, n, i):
     '''
     Arguments:
     Para heapify arvore interior com raiz no index i
     n eh o tamanho da heap
     '''
-
-    
- 
-
     esquerda = 2 * i + 1    # Isso causa uma operação
     direita = 2 * i + 2     # prefixa
  
@@ -52,10 +62,15 @@ def heapSort(arr):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
  
-# Pequeno Caso de Teste
-arr = [ 12, 11, 13, 5, 6, 7]
-heapSort(arr)
-n = len(arr)
-print ("Sorted array is")
-for i in range(n):
-    print ("%d" %arr[i]),
+def benchmark(func, lista, *kargs):
+    print("\n\n" + func.__name__)
+    print("Original:", lista)
+    start = time.time() # Retorna em segundos
+    func(lista, *kargs)
+    end = time.time()   # Retorna em segundos
+    print("\nTempo gasto:", end-start, "segundos")
+    print("Final:   ", lista)
+    print(func.__name__ + "\n\n")
+
+a = list(b) # Obriga a criar instancias diferentes da classe list
+benchmark(heapSort, a)
